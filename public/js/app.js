@@ -1,1 +1,10 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'NerdService', 'GeekCtrl', 'GeekService']);
+angular.module('meanCommerce', [
+	'ngRoute',
+	'ui.bootstrap',
+	'restangular',
+	'appRoutes',
+	'ProductCtrl',
+	'DetailCtrl',
+	'NerdService',
+	'GeekService'
+]);

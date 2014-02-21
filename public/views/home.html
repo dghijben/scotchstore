@@ -1,5 +1,38 @@
 <div class="jumbotron text-center">
-	<h1>Home Page 4 Life</h1>
+	<h1>No of products: <span class="label label-info">{{ products.length }}</span></h1>
+</div>
 
-	<p>{{ tagline }}</p>
+		<!-- PRODUCT LIST -->
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+
+				<!-- LOOP OVER THE PRODUCTS IN $scope.products -->
+		
+		<div ng-repeat="product in products">
+			<label>
+				<input type="checkbox" ng-click="deleteProduct(product._id)"> <a href="#/products/{{product.item}}">{{ product.item }}</a>
+				
+			</label>	
+		</div>
+	</div>
+</div>
+
+		<!-- FORM TO CREATE PRODUCTS -->
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		<form>
+
+			<div class="form-group">
+				<!-- BIND THIS VALUE TO formData.item IN ANGULAR -->
+				<input type="text" class="form-control input-lg text-center" placeholder="Product Name" ng-model="formData.item">
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="form-control input-lg text-center" placeholder="Product Description" ng-model="formData.description">
+			</div>
+
+			<!-- createProduct() WILL CREATE NEW PRODUCTS -->
+			<button type="submit" class="btn btn-primary btn-lg" ng-click="createProduct()">Add</button>
+		</form>
+	</div>
 </div>
